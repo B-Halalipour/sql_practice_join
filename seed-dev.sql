@@ -1,7 +1,7 @@
 
 \c my_bookshop
 
-CREATE TABLE authors (
+CREATE TABLE IF NOT EXISTS authors (
     author_id SERIAL PRIMARY KEY,
     author_name TEXT,
     fun_fact TEXT
@@ -27,7 +27,7 @@ VALUES
 ('Margaret Atwood', 'Atwood was the first author to contribute to The Future Library Project, which will take one writer''s contribution each year for one hundred years to be printed in the year 2114.');
 
 
-CREATE TABLE books (
+CREATE TABLE IF NOT EXISTS books (
     book_id SERIAL PRIMARY KEY,
     title VARCHAR(200),
     price NUMERIC(7,2),
@@ -51,4 +51,27 @@ VALUES
 ('A Brief History of Time', 8.25, 0, '1988-04-01', FALSE, 4),
 ('Pride and Prejudice', 6.99, 4, '1813-01-28', TRUE, 14);
 
+
+CREATE TABLE IF NOT EXISTS genres (
+    genre_id SERIAL PRIMARY KEY,
+    genre VARCHAR(100)
+);
+
+INSERT INTO genres 
+(genre)
+VALUES
+('science fiction'),
+('children''s'),
+('romance'),
+('fantasy'),
+('dystopian'),
+('science'),
+('adventure'),
+('classics');
+
+CREATE TABLE IF NOT EXISTS book_genres (
+    book_genre_id SERIAL PRIMARY KEY,
+    book_id INT REFERENCES books(book_id),
+    genre_id INT REFERENCES genre(genre_id)
+);
 
