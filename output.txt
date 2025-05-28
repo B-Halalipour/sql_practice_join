@@ -12,3 +12,13 @@
  The Handmaid's Tale                  | Margaret Atwood
 (10 rows)
 
+  author_name   
+----------------
+ Dan Brown
+ Eric Carle
+ J. D. Salinger
+ C. S. Lewis
+ Roald Dahl
+ Frank Herbert
+(6 rows)
+
