@@ -75,3 +75,18 @@ CREATE TABLE IF NOT EXISTS book_genres (
     genre_id INT REFERENCES genre(genre_id)
 );
 
+INSERT INTO book_genres (
+    book_id, genre_id
+)
+VALUES
+(1, 1),  -- The Hitchhiker's Guide to the Galaxy - science fiction
+(1, 4),  -- The Hitchhiker's Guide to the Galaxy - fantasy
+(2, 2),  -- The Little Prince - children's
+(2, 7),  -- The Little Prince - adventure
+(5, 1),  -- Nineteen Eighty-Four - science fiction
+(5, 5),  -- Nineteen Eighty-Four - dystopian
+(6, 5),  -- The Handmaid's Tale - dystopian
+(7, 1),  -- The War of the Worlds - science fiction
+(7, 7),  -- The War of the Worlds - adventure
+(10, 3), -- Pride and Prejudice - romance
+(10, 8); -- Pride and Prejudice - classics
