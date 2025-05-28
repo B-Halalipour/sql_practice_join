@@ -1,7 +1,12 @@
 
 \c my_bookshop
+DROP TABLE IF EXISTS book_genres;
+DROP TABLE IF EXISTS books;
+DROP TABLE IF EXISTS genres;
+DROP TABLE IF EXISTS authors;
 
-CREATE TABLE IF NOT EXISTS authors (
+
+CREATE TABLE  authors (
     author_id SERIAL PRIMARY KEY,
     author_name TEXT,
     fun_fact TEXT
@@ -27,7 +32,7 @@ VALUES
 ('Margaret Atwood', 'Atwood was the first author to contribute to The Future Library Project, which will take one writer''s contribution each year for one hundred years to be printed in the year 2114.');
 
 
-CREATE TABLE IF NOT EXISTS books (
+CREATE TABLE books (
     book_id SERIAL PRIMARY KEY,
     title VARCHAR(200),
     price NUMERIC(7,2),
@@ -52,7 +57,7 @@ VALUES
 ('Pride and Prejudice', 6.99, 4, '1813-01-28', TRUE, 14);
 
 
-CREATE TABLE IF NOT EXISTS genres (
+CREATE TABLE genres (
     genre_id SERIAL PRIMARY KEY,
     genre VARCHAR(100)
 );
@@ -69,10 +74,10 @@ VALUES
 ('adventure'),
 ('classics');
 
-CREATE TABLE IF NOT EXISTS book_genres (
+CREATE TABLE book_genres (
     book_genre_id SERIAL PRIMARY KEY,
     book_id INT REFERENCES books(book_id),
-    genre_id INT REFERENCES genre(genre_id)
+    genre_id INT REFERENCES genres(genre_id)
 );
 
 INSERT INTO book_genres (

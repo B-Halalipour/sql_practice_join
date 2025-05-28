@@ -22,3 +22,13 @@
  Frank Herbert
 (6 rows)
 
+ title |   genre   
+-------+-----------
+ Emma  | adventure
+(1 row)
+
+  genre  |        title        
+---------+---------------------
+ romance | Pride and Prejudice
+(1 row)
+
